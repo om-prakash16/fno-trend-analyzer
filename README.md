@@ -140,8 +140,12 @@ Contributions are welcome! Please follow these steps:
 
 ## 📞 Contact
 
-**Om Prakash**
--   GitHub: [@om-prakash16](https://github.com/om-prakash16)
+**Om Prakash**  
+📱 +91 91627 07792  
+
+- **GitHub:** https://github.com/om-prakash16  
+- **LinkedIn:** https://www.linkedin.com/in/om-prakash-kr/  
+- **Email:** prakash.om.global@gmail.com  
 
 ## 📄 License
 
