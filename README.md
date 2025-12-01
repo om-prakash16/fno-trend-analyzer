@@ -22,7 +22,12 @@
 
 ## 📸 Screenshots
 
-*(Add screenshots of your dashboard, stock table, and details modal here)*
+<img width="1893" height="873" alt="{3FFFCB33-2F09-4638-AE62-A97F47FABF35}" src="https://github.com/user-attachments/assets/e8cbbabe-d800-4c98-8412-2d638de969a4" />
+<img width="1918" height="799" alt="{BAB05A45-7622-4484-8B78-FB0B7B99F6E6}" src="https://github.com/user-attachments/assets/90b2fd18-3d95-4c2d-9e22-0b595e997478" />
+<img width="1911" height="870" alt="{10564C6B-B71F-42FD-A4A1-41EFF1B77081}" src="https://github.com/user-attachments/assets/42c432ba-3c61-40a7-b2e4-80d235771a90" />
+
+
+
 
 ## 🛠️ Tech Stack
 
