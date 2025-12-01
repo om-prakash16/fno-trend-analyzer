@@ -1,4 +1,4 @@
-# NSE Stock Analyzer
+# FNO Trend Analyzer
 
 A robust and high-performance backend system designed for analyzing National Stock Exchange (NSE) data, with a specific focus on Futures and Options (F&O) stocks. Built with **FastAPI**, this application provides real-time data fetching, technical analysis, and watchlist management capabilities.
 
