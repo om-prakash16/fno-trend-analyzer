@@ -46,8 +46,8 @@ A robust and high-performance backend system designed for analyzing National Sto
 1.  **Clone the repository**
 
     ```bash
-    git clone <repository-url>
-    cd nse-stock-analyzer
+    git clone git@github.com:om-prakash16/fno-trend-analyzer.git
+    cd fno-trend-analyzer
     ```
 
 2.  **Set up a Virtual Environment**
