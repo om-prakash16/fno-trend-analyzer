@@ -1,98 +1,143 @@
-# FNO Trend Analyzer
+# F&O Trend Analyzer 📈
 
-A robust and high-performance backend system designed for analyzing National Stock Exchange (NSE) data, with a specific focus on Futures and Options (F&O) stocks. Built with **FastAPI**, this application provides real-time data fetching, technical analysis, and watchlist management capabilities.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-009688.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14.0-black.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC.svg)
+
+**F&O Trend Analyzer** is a powerful, real-time stock analysis tool designed exclusively for NSE Futures & Options (F&O) stocks. It provides traders with instant insights through stability-based ranking, real-time indicators (MACD, RSI), and strength analysis.
 
 ## 🚀 Features
 
-- **Real-time Data Analysis**: Fetches and processes live market data using `yfinance` and `nselib`.
-- **F&O Focus**: Specialized tools for analyzing Futures and Options stocks.
-- **Watchlist Management**: Create and manage custom watchlists to track favorite stocks.
-- **Background Synchronization**: Automated background tasks to keep market data fresh and up-to-date.
-- **RESTful API**: Clean and documented API endpoints for easy frontend integration.
-- **Scalable Architecture**: Built on FastAPI for high performance and async capabilities.
+-   **Real-Time Data**: Fetches live market data for all 208 F&O stocks.
+-   **Stability Ranking**: Unique ranking system based on price stability (closest to 0% change).
+-   **Advanced Indicators**:
+    -   **MACD**: Visual status (Above Zero, Below Zero, Neutral).
+    -   **RSI**: Zone detection (Overbought, Oversold, Neutral).
+    -   **Strength Meter**: Visual buyer/seller dominance gauge.
+-   **Smart Filtering**: Auto-filters for Gainers, Losers, High Volume, and specific indicator states.
+-   **Interactive UI**: Modern, dark-themed dashboard built with Next.js and Tailwind CSS.
+-   **High Performance**: Backend caching and optimized data fetching for sub-second response times.
+
+## 📸 Screenshots
+
+*(Add screenshots of your dashboard, stock table, and details modal here)*
 
 ## 🛠️ Tech Stack
 
-- **Language**: Python 3.8+
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/)
-- **Data Processing**: Pandas, NumPy
-- **Market Data**: yfinance, nselib
-- **Task Scheduling**: APScheduler (Background tasks)
+-   **Backend**: Python, FastAPI, yfinance, Pandas, NumPy
+-   **Frontend**: TypeScript, Next.js (App Router), Tailwind CSS, Lucide React
+-   **State Management**: TanStack Query (React Query)
+-   **Data Source**: Yahoo Finance API (via `yfinance`)
 
-## 📂 Project Structure
+## 📂 Folder Structure
 
 ```
-├── Backend/
+fno-trend-analyzer/
+├── backend/                # FastAPI Backend
 │   ├── app/
-│   │   ├── main.py          # Application entry point
-│   │   ├── routes/          # API route definitions
-│   │   ├── services/        # Business logic and data services
-│   │   └── config.py        # Configuration settings
-│   ├── requirements.txt     # Python dependencies
+│   │   ├── main.py         # Application entry point
+│   │   ├── config.py       # Configuration & Constants
+│   │   ├── schemas.py      # Pydantic Models
+│   │   ├── routes/         # API Endpoints
+│   │   ├── services/       # Business Logic (Stocks, Indicators)
+│   │   └── utils/          # Helper functions (Filters)
+│   ├── requirements.txt    # Python dependencies
 │   └── ...
-├── fetch_symbols.py         # Utility to fetch NSE symbols
-└── verify_backend.py        # Script to verify backend functionality
+├── frontend/               # Next.js Frontend
+│   ├── src/
+│   │   ├── app/            # App Router Pages
+│   │   ├── components/     # Reusable UI Components
+│   │   ├── hooks/          # Custom React Hooks
+│   │   └── lib/            # Utilities
+│   ├── public/             # Static Assets
+│   ├── package.json        # Node dependencies
+│   └── ...
+├── .gitignore              # Git ignore rules
+└── README.md               # Project Documentation
 ```
 
-## ⚡ Getting Started
+## ⚙️ Installation & Setup
 
 ### Prerequisites
+-   Python 3.10+
+-   Node.js 18+
+-   Git
 
-- Python 3.8 or higher installed.
-- Git installed.
+### 1. Clone the Repository
 
-### Installation
+```bash
+git clone git@github.com:om-prakash16/fno-trend-analyzer.git
+cd fno-trend-analyzer
+```
 
-1.  **Clone the repository**
+### 2. Backend Setup
 
-    ```bash
-    git clone git@github.com:om-prakash16/fno-trend-analyzer.git
-    cd fno-trend-analyzer
-    ```
+Navigate to the backend directory and set up the Python environment.
 
-2.  **Set up a Virtual Environment**
+```bash
+cd backend
 
-    ```bash
-    python -m venv .venv
-    # Windows
-    .venv\Scripts\activate
-    # macOS/Linux
-    source .venv/bin/activate
-    ```
+# Create virtual environment
+python -m venv venv
 
-3.  **Install Dependencies**
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+# source venv/bin/activate
 
-    ```bash
-    pip install -r Backend/requirements.txt
-    ```
+# Install dependencies
+pip install -r requirements.txt
+```
 
-### Running the Application
+### 3. Frontend Setup
 
-1.  Navigate to the `Backend` directory:
+Navigate to the frontend directory and install Node dependencies.
 
-    ```bash
-    cd Backend
-    ```
+```bash
+cd ../frontend
 
-2.  Start the server using Uvicorn:
+# Install dependencies
+npm install
+```
 
-    ```bash
-    uvicorn app.main:app --reload
-    ```
+## 🏃‍♂️ Running the Application
 
-3.  The API will be available at `http://localhost:8000`.
+### Start Backend Server
+The backend runs on `http://localhost:8000`.
 
-## 📖 API Documentation
+```bash
+# In backend directory (with venv activated)
+uvicorn app.main:app --reload --port 8000
+```
 
-Once the application is running, you can access the interactive API documentation:
+### Start Frontend Server
+The frontend runs on `http://localhost:3000`.
 
-- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+```bash
+# In frontend directory
+npm run dev
+```
 
-## 🤝 Contributing
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🤝 Contribution
+
+Contributions are welcome! Please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## 📞 Contact
+
+**Om Prakash**
+-   GitHub: [@om-prakash16](https://github.com/om-prakash16)
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
